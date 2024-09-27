@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple_500"
+    tools:context=".WeatherActivity">
+<!--    将编写的其他小组件布局引入到该文件中-->
+<!--    ScollView只允许存在一个直接子布局-->
+
+
+    <ImageView
+        android:id="@+id/bing_pic_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+    <ScrollView
+        android:id="@+id/weather_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:fitsSystemWindows="true"
+            >
+
+            <include
+                android:id="@+id/include_title"
+                layout="@layout/title" />
+
+            <include
+                android:id="@+id/include_now"
+                layout="@layout/now" />
+
+            <include
+                android:id="@+id/include_forecast"
+                layout="@layout/forecast" />
+
+            <include
+                android:id="@+id/include_aqi"
+                layout="@layout/aqi" />
+
+            <include
+                android:id="@+id/include_suggestion"
+                layout="@layout/suggestion" />
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>
